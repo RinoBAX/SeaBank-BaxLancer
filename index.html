@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dokumentasi Flow Registrasi SeaBank</title>
+    <link rel="icon" type="image/png" href="/baxIcon.png" />
     <style>
         /* Import Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
@@ -41,8 +42,44 @@
         /* Container for the main content */
         .container {
             max-width: 850px;
-            margin: 2rem auto;
+            margin: 0 auto;
             padding: 2rem;
+        }
+        
+        /* === NEW: Top Navigation Bar === */
+        .top-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        /* Logo Styling - Simplified */
+        .page-logo {
+            width: 150px;
+            height: auto;
+        }
+
+        /* Download Button Styling - Simplified */
+        #download-btn {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            border-radius: var(--border-radius);
+            padding: 12px 20px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 116, 38, 0.4);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #download-btn:hover {
+            background-color: #e6601a;
+            transform: translateY(-2px);
         }
 
         /* Header Styling */
@@ -164,62 +201,37 @@
             padding: 2px 5px;
             border-radius: 4px;
         }
-
-        /* Download Button Styling */
-        #download-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: var(--primary-color);
-            color: var(--white-color);
-            border: none;
-            border-radius: var(--border-radius);
-            padding: 12px 20px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(255, 116, 38, 0.4);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            z-index: 1000;
-        }
-
-        #download-btn:hover {
-            background-color: #e6601a;
-            transform: translateY(-2px);
-        }
         
         /* Responsive Design */
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
-                margin: 1rem auto;
             }
-            
+            .top-navigation {
+                padding: 1rem 0;
+                margin-bottom: 1.5rem;
+            }
+            .page-logo {
+                width: 120px;
+            }
             header h1 {
                 font-size: 2rem;
             }
-            
             header p {
                 font-size: 1rem;
             }
-            
             .step {
                 padding: 1.5rem;
             }
-            
             #download-btn {
                 padding: 10px 15px;
                 font-size: 0.9rem;
-                bottom: 20px;
-                right: 20px;
-                top: auto;
             }
         }
         
         /* Print-specific styles to hide button */
         @media print {
-            #download-btn, footer {
+            .top-navigation, footer {
                 display: none;
             }
             body {
@@ -240,13 +252,20 @@
     </style>
 </head>
 <body>
-
-    <!-- Tombol Download PDF -->
-    <button id="download-btn" title="Download halaman ini sebagai PDF">
-        Download PDF
-    </button>
-
+    
     <div class="container">
+        <!-- === NEW: Top Navigation Bar === -->
+        <div class="top-navigation">
+            <!-- Logo Perusahaan -->
+            <img src="./assets/iconBaxRemovedBG.png" alt="Logo Bax" class="page-logo" 
+                 onerror="this.style.display='none'">
+
+            <!-- Tombol Download PDF -->
+            <button id="download-btn" title="Download halaman ini sebagai PDF">
+                Download PDF
+            </button>
+        </div>
+
         <header>
             <h1>Flow Registrasi SeaBank</h1>
             <p>Dokumentasi langkah demi langkah untuk membuka rekening SeaBank berdasarkan alur di aplikasi.</p>
